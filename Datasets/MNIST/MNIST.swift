@@ -70,10 +70,8 @@ public struct MNIST<Entropy: RandomNumberGenerator> {
       samples: fetchMNISTDataset(
         localStorageDirectory: localStorageDirectory,
         remoteBaseDirectory: "https://storage.googleapis.com/cvdf-datasets/mnist",
-        //imagesFilename: "train-images-idx3-ubyte",
-        imagesFilename: "aaa",
-        //labelsFilename: "train-labels-idx1-ubyte",
-        labelsFilename: "bbb"),
+        imagesFilename: "train-images-idx3-ubyte",
+        labelsFilename: "train-labels-idx1-ubyte"),
       batchSize: batchSize, entropy: entropy
     ).lazy.map { (batches: Batches) -> LazyMapSequence<Batches, LabeledImage> in
       return batches.lazy.map{ makeMNISTBatch(
@@ -84,10 +82,8 @@ public struct MNIST<Entropy: RandomNumberGenerator> {
     validation = fetchMNISTDataset(
       localStorageDirectory: localStorageDirectory,
       remoteBaseDirectory: "https://storage.googleapis.com/cvdf-datasets/mnist",
-      //imagesFilename: "t10k-images-idx3-ubyte",
-      imagesFilename: "aaa",
-      //labelsFilename: "t10k-labels-idx1-ubyte"
-      labelsFilename: "bbb"
+      imagesFilename: "t10k-images-idx3-ubyte",
+      labelsFilename: "t10k-labels-idx1-ubyte"),
     ).inBatches(of: batchSize).lazy.map {
       makeMNISTBatch(samples: $0, flattening: flattening, normalizing: normalizing, 
                      device: device)
