@@ -25,7 +25,7 @@ let np = Python.import(numpy)
 let tf = Python.import(tensorflow.compat.v2)
 let tfds = Python.import(tensorflow_datasets.public_api)
 
-var = _QUICKDRAW_IMAGE_SIZE = 28
+var _QUICKDRAW_IMAGE_SIZE = 28
 var _QUICKDRAW_IMAGE_SHAPE = (_QUICKDRAW_IMAGE_SIZE, _QUICKDRAW_IMAGE_SIZE, 1)
 var _QUICKDRAW_BASE_URL = "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap"  // pylint: disable=line-too-long
 var _QUICKDRAW_LABELS_FNAME = "image_classification/quickdraw_labels.txt"
