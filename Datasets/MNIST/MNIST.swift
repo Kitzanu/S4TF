@@ -83,7 +83,7 @@ public struct MNIST<Entropy: RandomNumberGenerator> {
       localStorageDirectory: localStorageDirectory,
       remoteBaseDirectory: "https://storage.googleapis.com/cvdf-datasets/mnist",
       imagesFilename: "t10k-images-idx3-ubyte",
-      labelsFilename: "t10k-labels-idx1-ubyte"),
+      labelsFilename: "t10k-labels-idx1-ubyte"
     ).inBatches(of: batchSize).lazy.map {
       makeMNISTBatch(samples: $0, flattening: flattening, normalizing: normalizing, 
                      device: device)
