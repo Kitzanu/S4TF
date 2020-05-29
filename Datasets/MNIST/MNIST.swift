@@ -73,7 +73,7 @@ public struct MNIST<Entropy: RandomNumberGenerator> {
         //imagesFilename: "train-images-idx3-ubyte",
         imagesFilename: "aaa",
         //labelsFilename: "train-labels-idx1-ubyte",
-        labelsFilename: "bbb")
+        labelsFilename: "bbb"),
       batchSize: batchSize, entropy: entropy
     ).lazy.map { (batches: Batches) -> LazyMapSequence<Batches, LabeledImage> in
       return batches.lazy.map{ makeMNISTBatch(
