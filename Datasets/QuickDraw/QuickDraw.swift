@@ -18,9 +18,8 @@
 // Yann LeCun, Corinna Cortes, and Christopher J.C. Burges
 // http://yann.lecun.com/exdb/mnist/
 import Foundation
-import TensorFlow
 import Batcher
-
+import TensorFlow
 #if canImport(PythonKit)
     import PythonKit
 #else
