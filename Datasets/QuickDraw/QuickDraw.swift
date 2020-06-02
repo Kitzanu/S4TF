@@ -24,7 +24,6 @@ import TensorFlow
     import PythonKit
 #else
     import Python
-    PYTHON_LOADER_LOGGING=1
 #endif
 
 let np = Python.import("numpy")
