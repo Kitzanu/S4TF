@@ -32,7 +32,6 @@ let tfds = Python.import("tensorflow_datasets.public_api")
 
 var _QUICKDRAW_IMAGE_SIZE = 28
 var _QUICKDRAW_IMAGE_SHAPE = [_QUICKDRAW_IMAGE_SIZE, _QUICKDRAW_IMAGE_SIZE, 1]
-print(_QUICKDRAW_IMAGE_SHAPE)
 var _QUICKDRAW_BASE_URL = "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap"  // pylint: disable=line-too-long
 var _QUICKDRAW_LABELS_FNAME = "image_classification/quickdraw_labels.txt"
 
@@ -86,7 +85,7 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
         localStorageDirectory: localStorageDirectory,
         remoteBaseDirectory: _QUICKDRAW_BASE_URL,
         imagesFilename:  tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE),
-        labelsFilename:  tfds.features.ClassLabel(names_file:labels_path)),
+        labelsFilename:  tfds.features.ClassLabel(names_file:tfds.core.get_tfds_path(_QUICKDRAW_LABELS_FNAME))),
       batchSize: batchSize, entropy: entropy
     ).lazy.map { (batches: Batches) -> LazyMapSequence<Batches, LabeledImage> in
       return batches.lazy.map{ makeQuickDrawBatch(
@@ -98,7 +97,7 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
       localStorageDirectory: localStorageDirectory,
       remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
       imagesFilename:  tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE),
-      labelsFilename:  tfds.features.ClassLabel(names_file:labels_path)
+      labelsFilename:  tfds.features.ClassLabel(names_file:tfds.core.get_tfds_path(_QUICKDRAW_LABELS_FNAME))
     ).inBatches(of: batchSize).lazy.map {
       makeQuickDrawBatch(samples: $0, flattening: flattening, normalizing: normalizing, 
                      device: device)
