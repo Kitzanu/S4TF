@@ -86,7 +86,7 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
         remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
         //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
         imagesFilename: "airplane",
-        labelsFilename: "image_classification/quickdraw_labels.txt"
+        labelsFilename: "image_classification/quickdraw_labels.txt"),
         //labelsFilename:  String(tfds.features.ClassLabel(names_file:tfds.core.get_tfds_path(_QUICKDRAW_LABELS_FNAME)))!
       batchSize: batchSize, entropy: entropy
     ).lazy.map { (batches: Batches) -> LazyMapSequence<Batches, LabeledImage> in
