@@ -83,7 +83,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     training = TrainingEpochs(
       samples: fetchQuickDrawDataset(
         localStorageDirectory: localStorageDirectory,
-        remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
+        remoteBaseDirectory: "https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap",
+        //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
         //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
         imagesFilename: "airplane",
         labelsFilename: "image_classification/quickdraw_labels.txt"),
@@ -97,7 +98,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     
     validation = fetchQuickDrawDataset(
       localStorageDirectory: localStorageDirectory,
-      remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
+      remoteBaseDirectory: "https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap",
+      //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
       //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
       imagesFilename: "airplane",
       labelsFilename: "image_classification/quickdraw_labels.txt"
