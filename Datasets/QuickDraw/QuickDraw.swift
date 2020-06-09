@@ -86,8 +86,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
         //remoteBaseDirectory: "https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap",
         remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
         //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
-        imagesFilename: "airplane",
-        labelsFilename: "image_classification/quickdraw_labels.txt"),
+        imagesFilename: "images_train",
+        labelsFilename: "targets_train),
         //labelsFilename:  String(tfds.features.ClassLabel(names_file:tfds.core.get_tfds_path(_QUICKDRAW_LABELS_FNAME)))!
       batchSize: batchSize, entropy: entropy
     ).lazy.map { (batches: Batches) -> LazyMapSequence<Batches, LabeledImage> in
@@ -101,8 +101,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
       //remoteBaseDirectory: "https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/numpy_bitmap",
       remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
       //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
-      imagesFilename: "airplane",
-      labelsFilename: "image_classification/quickdraw_labels.txt"
+      imagesFilename: "images_valid",
+      labelsFilename: "targets_valid"
       //labelsFilename:  String(tfds.features.ClassLabel(names_file:tfds.core.get_tfds_path(_QUICKDRAW_LABELS_FNAME)))!
     ).inBatches(of: batchSize).lazy.map {
       makeQuickDrawBatch(samples: $0, flattening: flattening, normalizing: normalizing, 
