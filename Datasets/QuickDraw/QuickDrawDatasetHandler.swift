@@ -15,12 +15,12 @@ func fetchQuickDrawDataset(
 
   let imagesData = DatasetUtilities.fetchResource(
     filename: imagesFilename,
-    fileExtension: "npy",
+    fileExtension: "npz",
     remoteRoot: remoteRoot,
     localStorageDirectory: localStorageDirectory)
   let labelsData = DatasetUtilities.fetchResource(
     filename: labelsFilename,
-    fileExtension: "npy",
+    fileExtension: "npz",
     remoteRoot: remoteRoot,
     localStorageDirectory: localStorageDirectory)
 
