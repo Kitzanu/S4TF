@@ -70,7 +70,7 @@ public struct MNIST<Entropy: RandomNumberGenerator> {
       samples: fetchMNISTDataset(
         localStorageDirectory: localStorageDirectory,
         //remoteBaseDirectory: "https://storage.googleapis.com/cvdf-datasets/mnist",
-        remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
+        remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com/_layouts/15/onedrive.aspx",
         imagesFilename: "train-images-idx3-ubyte",
         labelsFilename: "train-labels-idx1-ubyte"),
       batchSize: batchSize, entropy: entropy
@@ -83,7 +83,7 @@ public struct MNIST<Entropy: RandomNumberGenerator> {
     validation = fetchMNISTDataset(
       localStorageDirectory: localStorageDirectory,
       //remoteBaseDirectory: "https://storage.googleapis.com/cvdf-datasets/mnist",
-      remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
+      remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com/_layouts/15/onedrive.aspx",
       imagesFilename: "t10k-images-idx3-ubyte",
       labelsFilename: "t10k-labels-idx1-ubyte"
     ).inBatches(of: batchSize).lazy.map {
