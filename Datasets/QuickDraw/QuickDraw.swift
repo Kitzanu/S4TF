@@ -78,8 +78,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     batchSize: Int, device: Device, entropy: Entropy, flattening: Bool = false, 
     normalizing: Bool = false, 
     //localStorageDirectory: URL = DatasetUtilities.defaultDirectory
-      .appendingPathComponent("QuickDraw", isDirectory: true)
-    localStorageDirectory: URL = swift-models/datasets/QuickDraw
+    //.appendingPathComponent("QuickDraw", isDirectory: true)
+    localStorageDirectory: URL = S4TF/Datasets/QuickDraw
   ) {
     training = TrainingEpochs(
       samples: fetchQuickDrawDataset(
