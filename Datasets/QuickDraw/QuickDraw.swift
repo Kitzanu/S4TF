@@ -77,13 +77,14 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
   public init(
     batchSize: Int, device: Device, entropy: Entropy, flattening: Bool = false, 
     normalizing: Bool = false, 
-    localStorageDirectory: URL = DatasetUtilities.defaultDirectory
+    //localStorageDirectory: URL = DatasetUtilities.defaultDirectory
       .appendingPathComponent("QuickDraw", isDirectory: true)
+    localStorageDirectory: URL = swift-models/datasets/QuickDraw
   ) {
     training = TrainingEpochs(
       samples: fetchQuickDrawDataset(
-        //localStorageDirectory: localStorageDirectory,
-        localStorageDirectory: swift-models/datasets/QuickDraw,
+        localStorageDirectory: localStorageDirectory,
+        //localStorageDirectory: swift-models/datasets/QuickDraw,
         remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
         //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",     
         //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
@@ -98,8 +99,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     }
     
     validation = fetchQuickDrawDataset(
-      //localStorageDirectory: localStorageDirectory,
-      localStorageDirectory: swift-models/datasets/QuickDraw,
+      localStorageDirectory: localStorageDirectory,
+      //localStorageDirectory: swift-models/datasets/QuickDraw,
       remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
       //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
       //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
