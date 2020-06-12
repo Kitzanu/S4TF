@@ -26,7 +26,7 @@ public enum DatasetUtilities {
     public static let defaultDirectory = try! FileManager.default.url(
             for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             //.appendingPathComponent("swift-models").appendingPathComponent("datasets")
-            .appendingPathComponent("s4tf").appendingPathComponent("datasets")
+            .appendingPathComponent("S4TF").appendingPathComponent("Datasets")
 
     @discardableResult
     public static func downloadResource(
