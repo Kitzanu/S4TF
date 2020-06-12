@@ -77,9 +77,8 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
   public init(
     batchSize: Int, device: Device, entropy: Entropy, flattening: Bool = false, 
     normalizing: Bool = false, 
-    //localStorageDirectory: URL = DatasetUtilities.defaultDirectory
-    //.appendingPathComponent("QuickDraw", isDirectory: true)
-    localStorageDirectory: URL = S4TF/Datasets/QuickDraw
+    localStorageDirectory: URL = DatasetUtilities.defaultDirectory.appendingPathComponent("QuickDraw", isDirectory: true)
+    //localStorageDirectory: URL = S4TF/Datasets/QuickDraw
   ) {
     training = TrainingEpochs(
       samples: fetchQuickDrawDataset(
