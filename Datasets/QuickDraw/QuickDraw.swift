@@ -83,7 +83,7 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     training = TrainingEpochs(
       samples: fetchQuickDrawDataset(
         //localStorageDirectory: localStorageDirectory,
-        localStorageDirectory: "swift-models/datasets/QuickDraw",
+        localStorageDirectory: swift-models/datasets/QuickDraw,
         remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
         //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",     
         //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
@@ -99,7 +99,7 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     
     validation = fetchQuickDrawDataset(
       //localStorageDirectory: localStorageDirectory,
-      localStorageDirectory: "swift-models/datasets/QuickDraw",
+      localStorageDirectory: swift-models/datasets/QuickDraw,
       remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
       //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
       //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
