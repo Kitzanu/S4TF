@@ -84,10 +84,10 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
       samples: fetchQuickDrawDataset(
         localStorageDirectory: localStorageDirectory,
         //localStorageDirectory: swift-models/datasets/QuickDraw,
-        remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
+        remoteBaseDirectory: "https://console.cloud.google.com/storage/browser/swift-quickdraw",
         //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",     
         //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
-        imagesFilename: "images_train.npz",
+        imagesFilename: "images_train",
         labelsFilename: "targets_train"),
         //labelsFilename:  String(tfds.features.ClassLabel(names_file:tfds.core.get_tfds_path(_QUICKDRAW_LABELS_FNAME)))!
       batchSize: batchSize, entropy: entropy
@@ -100,7 +100,7 @@ public struct QuickDraw<Entropy: RandomNumberGenerator> {
     validation = fetchQuickDrawDataset(
       localStorageDirectory: localStorageDirectory,
       //localStorageDirectory: swift-models/datasets/QuickDraw,
-      remoteBaseDirectory: "https://vsod-my.sharepoint.com/personal/adrien_leroy_viseo_com",
+      remoteBaseDirectory: "https://console.cloud.google.com/storage/browser/swift-quickdraw",
       //remoteBaseDirectory: "https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap",
       //imagesFilename:  String(tfds.features.Image(shape:_QUICKDRAW_IMAGE_SHAPE))!,
       imagesFilename: "images_valid",
